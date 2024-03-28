@@ -13,7 +13,7 @@ Je travaillais sur une application web de gestion de ticket (quand un utilisateu
 ```
 Oui il y avait des devOps, il s'occupait de dev l'application web puis de faire le déploiement.
 
-Les branches gitlab étaient protégées, je ne pouvais modifier et push que dans ma branche quand je développais.
+Les branches gitlab étaient protégées, je ne pouvais modifier et push que dans ma branche quand je développais. 
 
 ```
 
