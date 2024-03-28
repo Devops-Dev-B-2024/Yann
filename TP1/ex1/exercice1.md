@@ -33,7 +33,7 @@ Je n'ai pas les informations de comment elle était héberger, cependant pour d�
 
 ## Le processus de build
 ```
-Je n'ai pas ces informations
+Je n'ai pas ces informations 
 
 ```
 
