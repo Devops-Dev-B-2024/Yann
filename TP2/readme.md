@@ -4,7 +4,7 @@
 ```
 a. docker pull nginx
 
-b. ![alt text](./images/1.png)
+b. ![alt text](images/1.png)
 
 c.
 
