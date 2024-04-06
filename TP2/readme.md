@@ -38,3 +38,26 @@ Pour le mount volume :
 Pour la copy :
 - Avantages : Moins de commande à taper et donc plus rapide à exécuter
 - Inconvénients : Plus complexe à mettre en place car il faut créer un Dockerfile et connaitre la syntaxe pour le faire
+
+## 5. Utiliser une base de données dans un container docker
+
+a. Mysql : ```docker pull mysql``` et phpmyadmin : ```docker pull phpmyadmin```
+
+b. J'ai exécuté :
+- ```docker run -d -p 8081:80 --name mon_container_mysql -e MYSQL_ALLOW_EMPTY_PASSWORD=yes mysql``` 
+- ```docker run -d -p 8080:80 --name mon_container_phpmyadmin phpmyadmin```
+
+Ensuite il faut que l'on connecte les 2 containers via un network, pour commencer j'ai crée un network ```docker network create reseau_bdd```
+
+Puis j'ai ajouté mes 2 containers dans ce network :
+- ```docker network connect reseau_bdd mon_container_mysql```
+- ```docker network connect reseau_bdd mon_container_phpmyadmin```
+
+Ensuite pour que mon container phpmyadmin utilise le nom d'hôte pour mettre mon container mysql
+![alt text](images/5.png)
+
+J'ai crée une bdd nommé test_bdd puis une table via l'interface :
+![alt text](images/6.png)
+
+Et on peut voir qu'elle a bien été crée :
+![alt text](images/7.png)
