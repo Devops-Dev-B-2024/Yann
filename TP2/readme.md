@@ -61,3 +61,21 @@ J'ai crée une bdd nommé test_bdd puis une table via l'interface :
 
 Et on peut voir qu'elle a bien été crée :
 ![alt text](images/7.png)
+
+## 6. Utilisation de docker-compose.yml
+
+a. La commande docker run sert à lancer et crée un container individuel à partir d'une image tandis que docker-compose sert à lancer plusieurs containers en même temps grâce à un fichier yaml qui spécifie les images à utiliser, les containers à lancer/crée ou les ports à exposer et tous ça en une seule commande.
+
+b. Les commandes :
+- pour lancer et créer : ```docker-compose up``` 
+- pour lancer: ```docker-compose start``` 
+- pour stopper: ```docker-compose stop``` 
+- pour stopper et supprimer: ```docker-compose down``` 
+
+c. J'ai crée mon fichier docker-compose.yml (à la racine du projet) puis j'ai crée et démarrer les containers grâce à la commande ```docker-compose up```.
+
+On peut voir que les containers se sont bien crée :
+![alt text](images/8.png)
+
+Puis on peut accéder à phpmyadmin :
+![alt text](images/9.png)
