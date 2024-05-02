@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "root",
+    "password": "mdp",
+    "database": "e-bakery",
+    "host": "db",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "root",
+    "password": "mdp",
+    "database": "e-bakery",
+    "host": "db",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "root",
+    "password": "mdp",
+    "database": "e-bakery",
+    "host": "db",
+    "dialect": "mysql"
+  }
+}
