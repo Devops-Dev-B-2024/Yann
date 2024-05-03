@@ -85,11 +85,11 @@ Mais nous rétablirons le lien dans l'étape 8
 
 ## 7. Utilisez des variables d'environnement dans votre docker-compose ET adaptez l'application (db.config.js) pour utiliser ces variables
 
-D'abord j'ai crée les variables dans .env :
+D'abord j'ai crée les variables dans .env :  
 ![alt text](images/5.png)
 
-Ensuite je les ai mise dans config.js :
+Ensuite je les ai mise dans config.js :  
 ![alt text](images/6.png)
 
-Puis dans mon docker-compose :
+Puis dans mon docker-compose :  
 ![alt text](images/7.png)
