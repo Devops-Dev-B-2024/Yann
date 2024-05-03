@@ -73,3 +73,11 @@ volumes:
 ```
 
 ## 6. Faire les adaptations nécessaires au docker-compose pour que votre app puisse utiliser votre base de données conteneurisée
+
+Malgré le fait que j'ai mis un lien à db dans le docker-compose, le container node redémarre en boucle :
+![alt text](images/3.png)
+
+Et l'erreur vient d'ici :
+![alt text](images/4.png)
+
+Mais nous rétablirons le lien dans l'étape 8
