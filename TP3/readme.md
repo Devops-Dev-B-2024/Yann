@@ -53,6 +53,7 @@ services:
     container_name: db
     environment:
       MYSQL_ROOT_PASSWORD: mdp
+      MYSQL_DATABASE: e-bakery
     ports:
       - "3000:3306"
     volumes:
