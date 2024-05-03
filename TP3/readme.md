@@ -30,5 +30,33 @@ Et on peut voir que ça fonctionne :
 ![alt text](images/2.png)
 
 ## 5. Créer un docker-compose.yml pour avoir 2 services (node et db)
+J'ai crée le docker-compose :
+```
+version: '3'
+ 
+services:
+  db:
+    image: mysql:latest
+    container_name: db
+    environment:
+      MYSQL_ROOT_PASSWORD: mdp
+    ports:
+      - "3000:3306"
+    volumes:
+      - tp3_data:/var/lib/mysql
+  node:
+    build: .
+    container_name: node
+    links:
+      - db
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
+    restart: always
+    ports:
+      - 8080:80
+volumes:
+  tp3_data:
+```
 
 ## 6. Faire les adaptations nécessaires au docker-compose pour que votre app puisse utiliser votre base de données conteneurisée
