@@ -3,7 +3,20 @@
 
 ## 2. Créer un Dockerfile qui permet de lancer une application NodeJS (v18-alpine ou v20)
 
-J'ai crée le Dockerfile.
+J'ai crée le Dockerfile :
+```
+FROM node:18-alpine
+
+WORKDIR /home/node/app
+
+COPY ./e-bakery/ ./
+
+RUN npm install
+
+EXPOSE 8000
+
+CMD ["node", "server.js"]
+``` 
 
 ## 3. Utilisez docker pour lancer une image de base de données (mysql ou mariadb)
 
