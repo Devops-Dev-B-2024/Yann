@@ -90,7 +90,7 @@ Ensuite je les ai mise dans config.js :
 ![alt text](images/6.png)
 
 Puis dans mon docker-compose :  
-![alt text](images/7.png)
+![alt text](images/7.png)  
 (ici j'ai ajouté à node environment pour ajouter les variables d'environnement)
 
 ## 8. Faites en sorte d'isoler vos 2 services docker-compose sur le même network.
