@@ -53,22 +53,20 @@ services:
     container_name: db
     environment:
       MYSQL_ROOT_PASSWORD: mdp
-      MYSQL_DATABASE: e-bakery
     ports:
       - "3000:3306"
     volumes:
       - tp3_data:/var/lib/mysql
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
   node:
     build: .
     container_name: node
     links:
       - db
-    environment:
-      PMA_HOST: db
-      PMA_PORT: 3306
     restart: always
     ports:
       - 8080:80
+      
 volumes:
   tp3_data:
 ```
