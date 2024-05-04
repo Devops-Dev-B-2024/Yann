@@ -76,7 +76,7 @@ volumes:
 Malgré le fait que j'ai mis un lien à db dans le docker-compose, le container node redémarre en boucle :
 ![alt text](images/3.png)
 
-Et l'erreur vient d'ici :
+Et c'est du à une erreur de connection avec la base de données :
 ![alt text](images/4.png)
 
 Mais nous rétablirons le lien dans l'étape 8
