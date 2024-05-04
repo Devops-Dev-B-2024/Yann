@@ -20,7 +20,7 @@ f. Je relance le container sans -v : ```docker run -d -p 8080:80 --name containe
 
 Puis je copie le chemin de mon dossier en local dans mon container : ```docker cp "$(pwd)/html/index.html" container_hello_world:/usr/share/nginx/html/index.html```
 
-Et on peut voir que cela fonctionne :
+Et on peut voir que cela fonctionne :  
 ![alt text](images/3.png)
 
 ## 4. Builder une image
@@ -39,7 +39,7 @@ CMD ["nginx", "-g", "daemon off;"]
 ```  
 Puis j'ai fait la commande : ```docker build -t mon-serveur-nginx .``` pour build mon image.
 
-b. J'exécute ma nouvelle image via la commande ```docker run -d -p 8080:80 mon-serveur-nginx```
+b. J'exécute ma nouvelle image via la commande ```docker run -d -p 8080:80 mon-serveur-nginx```  
 Voici mon index.html :
 ![alt text](images/4.png)
 
