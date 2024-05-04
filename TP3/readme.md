@@ -93,3 +93,53 @@ Ensuite je les ai mise dans config.js :
 
 Puis dans mon docker-compose :  
 ![alt text](images/7.png)
+
+## 8. Faites en sorte d'isoler vos 2 services docker-compose sur le même network.
+
+Après avoir modifier mon docker-compose :  
+```
+version: '3'
+ 
+services:
+  node:
+    build: .
+    container_name: node
+    networks:
+      - tp3-network
+    depends_on:
+      - db
+    environment:
+      DB_USERNAME: ${DB_USERNAME}
+      DB_PASSWORD: ${DB_PASSWORD}
+      DB_NAME: ${DB_NAME}
+      DB_HOST: ${DB_HOST}
+      DB_DIALECT: ${DB_DIALECT}
+      PORT: ${PORT}
+    restart: always
+    ports:
+      - 8080:80
+  db:
+    image: mysql:latest
+    container_name: db
+    networks:
+      - tp3-network
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+    ports:
+      - "3306"
+    volumes:
+      - tp3_data:/var/lib/mysql
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+
+networks:
+  tp3-network:
+    driver: bridge
+    name: tp3-network
+
+volumes:
+  tp3_data:
+```
+
+On peut voir que cela fonctionne bien :  
+![alt text](images/8.png)  
+![alt text](images/9.png) 

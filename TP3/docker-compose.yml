@@ -1,26 +1,40 @@
 version: '3'
  
 services:
-  db:
-    image: mysql:latest
-    container_name: db
-    environment:
-      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
-      MYSQL_DATABASE: ${DB_DATABASE}
-    ports:
-      - "3000:3306"
-    volumes:
-      - tp3_data:/var/lib/mysql
   node:
     build: .
     container_name: node
-    links:
+    networks:
+      - tp3-network
+    depends_on:
       - db
     environment:
-      PMA_HOST: db
-      PMA_PORT: 3306
+      DB_USERNAME: ${DB_USERNAME}
+      DB_PASSWORD: ${DB_PASSWORD}
+      DB_NAME: ${DB_NAME}
+      DB_HOST: ${DB_HOST}
+      DB_DIALECT: ${DB_DIALECT}
+      PORT: ${PORT}
     restart: always
     ports:
       - 8080:80
+  db:
+    image: mysql:latest
+    container_name: db
+    networks:
+      - tp3-network
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+    ports:
+      - "3306"
+    volumes:
+      - tp3_data:/var/lib/mysql
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+
+networks:
+  tp3-network:
+    driver: bridge
+    name: tp3-network
+
 volumes:
   tp3_data:

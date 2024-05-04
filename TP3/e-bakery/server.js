@@ -1,9 +1,10 @@
 //------------------------ Import ------------------------
 const app = require('./app');
 const db = require('./models/index.js');
+require('dotenv').config();
 
 //------------------------ init port ------------------------
-const port = 8000;
+const port = process.env.PORT;
 
 //------------------------ Connected database ------------------------
 db.sequelize.sync({force: false}).then(async () => {
