@@ -35,9 +35,9 @@ Ensuite dans mon container mysql je me suis connecté puis j'ai crée la table e
 - ```docker exec -it mon_container_mysql mysql -uroot -p```
 - ```CREATE DATABASE 'e-bakery';```
 
-Et enfin, j'ai démarré démarré mon container : ```docker run -d -p 8080:80 --name container_api api-e-bakery```
+Et enfin, j'ai démarré mon container : ```docker run -d -p 8080:80 --name container_api api-e-bakery```
 
-Et on peut voir que ça fonctionne :
+Et on peut voir que cela fonctionne :
 ![alt text](images/1.png)
 
 ![alt text](images/2.png)
