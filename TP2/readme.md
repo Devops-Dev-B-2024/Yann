@@ -40,7 +40,7 @@ CMD ["nginx", "-g", "daemon off;"]
 Puis j'ai fait la commande : ```docker build -t mon-serveur-nginx .``` pour build mon image.
 
 b. J'exécute ma nouvelle image via la commande ```docker run -d -p 8080:80 mon-serveur-nginx```  
-Voici mon index.html :
+Voici mon index.html :  
 ![alt text](images/4.png)
 
 c. Dans la question 3, on a utilisé le montage de volume avec -v alors que dans la question 4, on a directement copié le fichier index.html dans l'image que l'on a crée avec le Dockerfile.
