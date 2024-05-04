@@ -11,7 +11,7 @@ c. Fichier crée dans le dossier html
 
 d. ```docker run -d -p 8080:80 --name container_hello_world -v "$(pwd)/html/index.html:/usr/share/nginx/html/index.html" nginx```
 
-On peut voir index.html :
+On peut voir index.html :  
 ![alt text](images/2.png)
 
 e. ```docker rm container_hello_world```
@@ -25,7 +25,19 @@ Et on peut voir que cela fonctionne :
 
 ## 4. Builder une image
 
-a. J'ai crée le dossier Dockerfile puis j'ai fait la commande : ```docker build -t mon-serveur-nginx .``` pour build mon image.
+a. J'ai crée le dossier Dockerfile :  
+```
+FROM nginx
+
+WORKDIR /usr/share/nginx/html
+
+COPY ./html/index.html ./usr/share/nginx/html/index.html
+
+EXPOSE 8080
+
+CMD ["nginx", "-g", "daemon off;"]
+```  
+Puis j'ai fait la commande : ```docker build -t mon-serveur-nginx .``` pour build mon image.
 
 b. J'exécute ma nouvelle image via la commande ```docker run -d -p 8080:80 mon-serveur-nginx```
 Voici mon index.html :
@@ -74,7 +86,35 @@ b. Les commandes :
 - pour stopper: ```docker-compose stop``` 
 - pour stopper et supprimer: ```docker-compose down``` 
 
-c. J'ai crée mon fichier docker-compose.yml (à la racine du projet) puis j'ai crée et démarrer les containers grâce à la commande ```docker-compose up```.
+c. J'ai crée mon fichier docker-compose.yml (à la racine du projet) :
+```
+version: '3'
+ 
+services:
+  db:
+    image: mysql:latest
+    container_name: db
+    environment:
+      MYSQL_ROOT_PASSWORD: mdp
+    ports:
+      - "8081:3306"
+    volumes:
+      - tp2_data:/var/lib/mysql
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    links:
+      - db
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
+    restart: always
+    ports:
+      - 8080:80
+volumes:
+  tp2_data:
+```  
+Puis j'ai crée et démarrer les containers grâce à la commande ```docker-compose up```.
 
 On peut voir que les containers se sont bien crée :
 ![alt text](images/8.png)
