@@ -147,3 +147,13 @@ On peut voir que cela fonctionne bien :
 - Q1: Que ce passe t-il si l'un des ports publiés est déjà utilisé ?  
 Cela indique une erreur expliquant que le port est déjà utilisé.  
   
+- Q2: Quelle option de la commande npm install permet de n'installer que les dépendances de production ?  
+L'option pour installer que les dépendances de production est ```--production```.  
+  
+- Q2 bis: Pourquoi faire cela ?  
+Cela permet de réduire la taille de l'application en enlevant toutes les dépendances de dev etc... pas utile à la production.  
+  
+Cela améliore également la sécurité car il y a une moins grande fenêtre d'attaque du au fait que moins de dépendances et leur potetiels vulnérabilités sont présentes.  
+  
+Et cela permet d'éviter les conflits qu'il pourrait y avoir entre les dépendances de production et de developpement à cause de leur versions ou autres.  
+  
