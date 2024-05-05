@@ -153,7 +153,7 @@ On peut voir que cela fonctionne bien :
 - **Q2 bis: Pourquoi faire cela ?**  
   Cela permet de réduire la taille de l'application en enlevant toutes les dépendances de dev etc... pas utile à la production.  
   
-  Cela améliore également la sécurité car il y a une moins grande fenêtre d'attaque du au fait que moins de dépendances et leur potetiels vulnérabilités sont présentes.  
+  Cela améliore également la sécurité car il y a une moins grande fenêtre d'attaque du au fait que moins de dépendances et leur potentiels vulnérabilités sont présentes.  
   
   Et cela permet d'éviter les conflits qu'il pourrait y avoir entre les dépendances de production et de developpement à cause de leur versions ou autres.  
   
