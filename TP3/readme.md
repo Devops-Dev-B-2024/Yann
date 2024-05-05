@@ -162,6 +162,6 @@ Pour analyser la sécurité les dépendances d'une app node js on peut utiliser 
   
 Pour une image docker, on peut utiliser la commande ```docker scan nom_image```, cependant on peut scanner que 10 images par mois gratuitement.  
   
-Mais il existe des solutions open-source tels que clair, trivy, snyk etc... après installations, on peut utiliser les commandes relatives aux solutions.  
-Cela peut être utiles si on a besoin de faire plus de 10 analyse de sécurité par mois d'image docker, sinon on peut se contenter de docke scan.  
+Mais il existe des solutions open-source tels que clair, trivy, snyk etc... après installation, on peut utiliser les commandes relatives aux solutions.  
+Cela peut être utile si on a besoin de faire plus de 10 analyses de sécurité par mois d'images docker, sinon on peut se contenter de docker scan.  
   
