@@ -157,3 +157,11 @@ Cela améliore également la sécurité car il y a une moins grande fenêtre d'a
   
 Et cela permet d'éviter les conflits qu'il pourrait y avoir entre les dépendances de production et de developpement à cause de leur versions ou autres.  
   
+- Q3: Comment peut-on analyser la sécurité d'une application comme celle-ci (dépendances & image docker) ?  
+Pour analyser la sécurité les dépendances d'une app node js on peut utiliser la commande ```npm audit``` pour vérifier les vulnérabilités des dépendances.  
+  
+Pour une image docker, on peut utiliser la commande ```docker scan nom_image```, cependant on peut scanner que 10 images par mois gratuitement.  
+  
+Mais il existe des solutions open-source tels que clair, trivy, snyk etc... après installations, on peut utiliser les commandes relatives aux solutions.  
+Cela peut être utiles si on a besoin de faire plus de 10 analyse de sécurité par mois d'image docker, sinon on peut se contenter de docke scan.  
+  
