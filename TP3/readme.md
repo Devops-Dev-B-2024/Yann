@@ -141,4 +141,9 @@ volumes:
 
 On peut voir que cela fonctionne bien :  
 ![alt text](images/8.png)  
-![alt text](images/9.png) 
+![alt text](images/9.png)  
+
+## Questions
+- Q1: Que ce passe t-il si l'un des ports publiés est déjà utilisé ?  
+Cela indique une erreur expliquant que le port est déjà utilisé.  
+  
