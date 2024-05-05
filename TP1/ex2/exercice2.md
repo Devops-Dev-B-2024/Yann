@@ -17,4 +17,7 @@ J'ai commencé par protégé ma branche main :
 ![alt text](images/3.png)  
   
 Et j'ai également protégé ma branche de travail (ici tp1) :  
-![alt text](images/4.png)
+![alt text](images/4.png)  
+  
+Quand moi ou mon acolyte essayons de push dans main ou que mon acolyte essait de push dans la branche tp1 cela affiche bien une erreur et ne le permet pas :  
+![alt text](images/5.png)  
