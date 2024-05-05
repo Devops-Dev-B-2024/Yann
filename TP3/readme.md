@@ -144,20 +144,20 @@ On peut voir que cela fonctionne bien :
 ![alt text](images/9.png)  
 
 ## Questions
-**- Q1: Que ce passe t-il si l'un des ports publiés est déjà utilisé ?**  
+- **Q1: Que ce passe t-il si l'un des ports publiés est déjà utilisé ?**  
   Cela indique une erreur expliquant que le port est déjà utilisé.  
   
-**- Q2: Quelle option de la commande npm install permet de n'installer que les dépendances de production ?**  
+- **Q2: Quelle option de la commande npm install permet de n'installer que les dépendances de production ?**  
   L'option pour installer que les dépendances de production est ```--production```.  
   
-**- Q2 bis: Pourquoi faire cela ?**  
+- **Q2 bis: Pourquoi faire cela ?**  
   Cela permet de réduire la taille de l'application en enlevant toutes les dépendances de dev etc... pas utile à la production.  
   
   Cela améliore également la sécurité car il y a une moins grande fenêtre d'attaque du au fait que moins de dépendances et leur potetiels vulnérabilités sont présentes.  
   
   Et cela permet d'éviter les conflits qu'il pourrait y avoir entre les dépendances de production et de developpement à cause de leur versions ou autres.  
   
-**- Q3: Comment peut-on analyser la sécurité d'une application comme celle-ci (dépendances & image docker) ?**  
+- **Q3: Comment peut-on analyser la sécurité d'une application comme celle-ci (dépendances & image docker) ?**  
   Pour analyser la sécurité les dépendances d'une app node js on peut utiliser la commande ```npm audit``` pour vérifier les vulnérabilités des dépendances.  
   
   Pour une image docker, on peut utiliser la commande ```docker scan nom_image```, cependant on peut scanner que 10 images par mois gratuitement.  
@@ -165,6 +165,6 @@ On peut voir que cela fonctionne bien :
   Mais il existe des solutions open-source tels que clair, trivy, snyk etc... après installation, on peut utiliser les commandes relatives aux solutions.  
   Cela peut être utile si on a besoin de faire plus de 10 analyses de sécurité par mois d'images docker, sinon on peut se contenter de docker scan.  
   
-**- Q4: Pourquoi à l'étape 6 mon container node n'arrive pas à communiquer avec ma base de données si je laisse localhost en hostname ?**  
+- **Q4: Pourquoi à l'étape 6 mon container node n'arrive pas à communiquer avec ma base de données si je laisse localhost en hostname ?**  
   Cela est du au fait que mon container va utiliser son localhost mais pas la base de données se trouve dans un autre container, il ne peut donc pas communiquer.  
   Pour résoudre le problème, il a fallu mettre le nom du service de la base de données et comme les 2 containers étaient sur le même réseau, ils ont pu communiquer car le container de l'app se connectait bien au container de base de données et plus à son localhost. 
