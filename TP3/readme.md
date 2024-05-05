@@ -165,3 +165,6 @@ Pour une image docker, on peut utiliser la commande ```docker scan nom_image```,
 Mais il existe des solutions open-source tels que clair, trivy, snyk etc... après installation, on peut utiliser les commandes relatives aux solutions.  
 Cela peut être utile si on a besoin de faire plus de 10 analyses de sécurité par mois d'images docker, sinon on peut se contenter de docker scan.  
   
+- Q4: Pourquoi à l'étape 6 mon container node n'arrive pas à communiquer avec ma base de données si je laisse localhost en hostname ?  
+Cela est du au fait que mon container va utiliser son localhost mais pas la base de données se trouve dans un autre container, il ne peut donc pas communiquer.  
+Pour résoudre le problème, il a fallu mettre le nom du service de la base de données et comme les 2 containers étaient sur le même réseau, ils ont pu communiquer car le container de l'app se connectait bien au container de base de données et plus à son localhost. 
